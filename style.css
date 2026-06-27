@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: url('background.png') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.profile {
+    margin-bottom: 40px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border-left: 4px solid #ee5a24;
+    padding-left: 12px;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background: white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
+}
+
+.link-item.twitter:hover {
+    border-color: #1da1f2;
+}
+
+.link-item.marketplace:hover {
+    border-color: #e056fd;
+}
+
+.link-item.landing:hover {
+    border-color: #27ae60;
+}
+
+.link-item.shop:hover {
+    border-color: #f39c12;
+}
+
+.link-item.mint:hover {
+    border-color: #9b59b6;
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.link-icon i {
+    color: #7f8c8d;
+    transition: all 0.3s ease;
+}
+
+.link-item.twitter .link-icon i {
+    color: #1da1f2;
+}
+
+.link-item.marketplace .link-icon i {
+    color: #e056fd;
+}
+
+.link-item.landing .link-icon i {
+    color: #27ae60;
+}
+
+.link-item.shop .link-icon i {
+    color: #f39c12;
+}
+
+.link-item.mint .link-icon i {
+    color: #9b59b6;
+}
+
+.link-item:hover .link-icon i {
+    transform: scale(1.1);
+}
+
+.link-text {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.link-arrow {
+    font-size: 18px;
+    color: #95a5a6;
+    transition: transform 0.3s ease;
+}
+
+.link-item:hover .link-arrow {
+    transform: translateX(3px);
+    color: #3498db;
+}
+
+.footer {
+    border-top: 1px solid #ecf0f1;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #95a5a6;
+    font-size: 14px;
+}
+
+/* タブレット対応 */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        background-attachment: scroll;
+    }
+
+    .container {
+        padding: 35px 25px;
+        max-width: 600px;
+    }
+
+    .profile h1 {
+        font-size: 26px;
+    }
+
+    .link-item {
+        padding: 20px;
+    }
+
+    .link-text {
+        font-size: 16px;
+    }
+}
+
+/* スマートフォン（縦向き）対応 */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        background-attachment: scroll;
+    }
+
+    .container {
+        padding: 25px 20px;
+        margin: 5px;
+        border-radius: 15px;
+        max-width: 100%;
+    }
+
+    .profile {
+        margin-bottom: 30px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+
+    .profile h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-top: 18px;
+        margin-bottom: 8px;
+    }
+
+    .links {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .link-item {
+        padding: 16px 18px;
+        border-radius: 12px;
+    }
+
+    .link-icon {
+        font-size: 22px;
+        margin-right: 12px;
+        width: 28px;
+    }
+
+    .link-text {
+        font-size: 15px;
+    }
+
+    .link-arrow {
+        font-size: 16px;
+    }
+
+    .footer {
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+}
+
+/* 小型スマートフォン対応 */
+@media (max-width: 360px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .profile-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile h1 {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 17px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    .link-item {
+        padding: 14px 16px;
+    }
+
+    .link-icon {
+        font-size: 20px;
+        margin-right: 10px;
+        width: 25px;
+    }
+
+    .link-text {
+        font-size: 14px;
+    }
+
+    .link-arrow {
+        font-size: 15px;
+    }
+}
+
+/* 極小スマートフォン対応 */
+@media (max-width: 320px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 18px 12px;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile h1 {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 16px;
+        margin-top: 14px;
+        margin-bottom: 6px;
+    }
+
+    .link-item {
+        padding: 12px 14px;
+    }
+
+    .link-icon {
+        font-size: 18px;
+        margin-right: 8px;
+        width: 22px;
+    }
+
+    .link-text {
+        font-size: 13px;
+    }
+}
+
+/* Policy Page Styles */
+.policy-content {
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.policy-content section {
+    margin-bottom: 40px;
+}
+
+.policy-content section:last-child {
+    margin-bottom: 0;
+}
+
+.policy-text {
+    margin-top: 20px;
+    color: #34495e;
+    line-height: 1.8;
+}
+
+.policy-text h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+.policy-text p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.policy-text a {
+    color: #ee5a24;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.policy-text a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #7f8c8d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.back-link:hover {
+    color: #ee5a24;
+}
+
+.back-link i {
+    margin-right: 8px;
+}
+
+.footer-link {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #7f8c8d;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .policy-content {
+        padding: 20px;
+    }
+}
+
+/* Advertisement Styles */
+.ad-separator {
+    border: none;
+    border-top: 1px dashed #bdc3c7;
+    margin: 40px 0 20px;
+}
+
+.ad-label {
+    display: block;
+    font-size: 11px;
+    color: #95a5a6;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ad-container {
+    text-align: center;
+    margin: 0 0 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-container img {
+    max-width: 100%;
+    height: auto;
+}
